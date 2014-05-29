@@ -100,7 +100,8 @@ pre .java .annotation,
 pre .template_comment,
 pre .pi,
 pre .doctype {
-  color: #7F9F7F;
+  /*color: #7F9F7F;*/
+  color: #66FF66;
 }
 
 pre .coffeescript .javascript,
