@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Installing and Using SASS</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -14,7 +14,7 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
 
 		<!-- For syntax highlighting -->
@@ -43,19 +43,142 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
+					<h1>SASS</h1>
+					<h3>Syntactically Awesome Style Sheets</h3>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>Rhys Harrison / Chad Dattilio</small>
 					</p>
 				</section>
 
 				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
+					<section>
+						<h2>Why use SASS?</h2>
+						<p>
+							Some examples:
+						</p>
+
+						<a href="#" class="image navigate-down">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+
+					<section>
+						<p>
+							Variables
+						</p>
+						<p>
+							<pre style="white-space: pre-line;"><code class="css">
+								$red: #ff0b13;
+								$blue: #091fff;
+								$green: #11c909;
+							</code>
+							</pre>
+						</p>
+						<p>
+							<pre style="white-space: pre-line;"><code class="css">
+								.i-want-to-be-green {
+								&nbsp;&nbsp;color: $green;
+								}
+							</code>
+							</pre>
+						</p>
+					</section>
+
+					<section>
+						<p>
+							Vendor prefixes
+						</p>
+						<p>
+							<pre style="white-space: pre-line;"><code class="css">
+								.rounded {
+								&nbsp;&nbsp;@include border-radius(4px);
+								}
+							</code>
+							</pre>
+						</p>
+						<p>
+							<pre style="white-space: pre-line;"><code class="css">
+								.rounded {
+								&nbsp;&nbsp;-webkit-border-radius: 4px;
+								&nbsp;&nbsp;-moz-border-radius: 4px;
+								&nbsp;&nbsp;-ms-border-radius: 4px;
+								&nbsp;&nbsp;-o-border-radius: 4px;
+								&nbsp;&nbsp;border-radius: 4px;
+								}
+							</code>
+							</pre>
+						</p>
+					</section>
+
+					<section>
+						<p>
+							Nesting rules
+						</p>
+						<p>
+							<pre style="white-space: pre-line;"><code class="css">
+								nav {
+								&nbsp;&nbsp;a {
+								&nbsp;&nbsp;&nbsp;&nbsp;color: $red;
+								&nbsp;&nbsp;&nbsp;&nbsp;&:hover {
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: $green;
+								&nbsp;&nbsp;&nbsp;&nbsp;}
+								&nbsp;&nbsp;&nbsp;&nbsp;&:visited {
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: $blue;
+								&nbsp;&nbsp;&nbsp;&nbsp;}
+								&nbsp;&nbsp;}
+								}
+							</code>
+							</pre>
+						</p>
+						<p>
+							<pre style="white-space: pre-line;"><code>
+								nav a {
+								&nbsp;&nbsp;color: #ff0b13;
+								}
+								nav a:hover {
+								&nbsp;&nbsp;color: #11c909;
+								}
+								nav a:visited {
+								&nbsp;&nbsp;color: #091fff;
+								}
+							</code>
+							</pre>
+						</p>
+					</section>
+
+					<section>
+						<p>
+							Media queries
+						</p>
+						<p>
+							<pre style="white-space: pre-line;"><code class="css">
+								@media only screen and (min-width: 280px) and (max-width: 479px) {
+								&nbsp;&nbsp;.h1 {
+								&nbsp;&nbsp;&nbsp;&nbsp;font-size: 1.1em;
+								&nbsp;&nbsp;}
+								}
+								@media only screen and (min-width: 600px) and (max-width: 767px) {
+								&nbsp;&nbsp;.h1 {
+								&nbsp;&nbsp;&nbsp;&nbsp;font-size: 0.9em;
+								&nbsp;&nbsp;}
+								}
+							</code>
+							</pre>
+						</p>
+						<p>
+							<pre style="white-space: pre-line;"><code>
+								h1 {
+								&nbsp;&nbsp;@include MQ(XS) {
+								&nbsp;&nbsp;&nbsp;&nbsp;font-size: 1.1em;
+								&nbsp;&nbsp;}
+								&nbsp;&nbsp;@include MQ(M) {
+								&nbsp;&nbsp;&nbsp;&nbsp;font-size: 0.9em;
+								&nbsp;&nbsp;}
+								}
+							</code>
+							</pre>
+						</p>
+					</section>
 
 					<aside class="notes">
 						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
@@ -65,76 +188,239 @@
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
-						<h2>Vertical Slides</h2>
+						<h2>Prerequisite: installing Ruby</h2>
 						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
+							Both SASS and Compass are Ruby "gems" (Ruby applications or plugins).
 						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<p>
+							Windows users:
+							<a href="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a>
+						</p>
+						
+					</section>
+					
+				</section>
+
+				<section>
+					<section>
+						<h2>Installing Compass</h2>
+						<p>
+							Compass is a framework that offers reusable patterns (think of it like a jQuery for SASS). When you install Compass, it automatically includes SASS.
+						</p>
+						<p>
+							Windows users: from the Ruby command line, type:
+							<pre>
+								<code>
+									gem install compass --pre
+								</code>
+							</pre>							
+						</p>
+						<p>
+							Mac users: from the Terminal, type:
+							<pre>
+								<code>
+									sudo gem install compass --pre
+								</code>
+							</pre>							
+						</p>
+						
+					</section>
+					
+				</section>
+
+				<section>
+					<h2>Creating a Compass Project</h2>
+					<p>
+						Normally you can move to the folder that contains your project and type "compass create" at the command prompt (or use your GUI to create a new project). This creates a bunch of boilerplate folders / files that you may not need. For a bare installation, type:
+					</p>
+					<p>
+						<pre>
+							<code>
+								compass create --bare --sass-dir "sass" --css-dir "css" --javascripts-dir "js" --images-dir "img"
+							</code>
+						</pre>							
+					</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>config.rb file</h2>
+						<p>
+							This file is automatically created and looks like this:
+						</p>
+						<p>
+							<pre>
+								<code>
+									# Require any additional compass plugins here.
+
+									# Set this to the root of your project when deployed:
+									http_path = "/"
+									css_dir = "css"
+									sass_dir = "sass"
+									images_dir = "img"
+									javascripts_dir = "js"
+
+									# You can select your preferred output style here (can be overridden via the command line):
+									# output_style = :expanded or :nested or :compact or :compressed
+
+									# To enable relative paths to assets via compass helper functions. Uncomment:
+									# relative_assets = true
+
+									# To disable debugging comments that display the original location of your selectors. Uncomment:
+									# line_comments = false
+
+								</code>
+							</pre>							
+						</p>
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
+						<h2>making changes to config.rb</h2>
+						<p>
+							When making changes to the config.rb file, particularly output style, it's sometimes necessary to clear the.sass-cache before expected changes will be seen. In this instance, either manually delete the sass-cache folder and it will be recreated next time a Sass file is saved, or run the following command from the command line:
+							<pre><code>
+							compass clean
+							</code></pre> 
+							
+						</p>
 					</section>
 					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
+						<h2>Setting the CSS output style</h2>
+						<p>
+							If you don't set an output style in config.rb, Sass and Compass produce rules in this format:
+							<pre><code>
+							/* line 8, ../sass/styles.scss */
+							#main {
+							&nbsp;&nbsp;color: #999;
+							}
+							/* line 10, ../sass/styles.scss */
+							#main .content {
+							&nbsp;&nbsp;color: #bfbfbf;
+							}
+							</code></pre> 
+							
+						</p>
 					</section>
 					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
+						<h2>nested css option</h2>
+						<p>
+							In config.rb, if you do this: output_style = :nested
+							<pre><code>
+							#main {
+							&nbsp;&nbsp;color: #999;
+							&nbsp;&nbsp;.content {
+							&nbsp;&nbsp;&nbsp;&nbsp;color: #bfbfbf;
+							&nbsp;&nbsp;}
+							}
+							</code></pre>
+							<p>would produce CSS like this:</p> 
+							<pre><code>
+							/* line 8, ../sass/styles.scss */
+							#main {
+							&nbsp;&nbsp;color: #999; }
+							&nbsp;&nbsp;/* line 10, ../sass/styles.scss */
+							&nbsp;&nbsp;#main .content {
+							&nbsp;&nbsp;&nbsp;&nbsp;color: #bfbfbf; }
+							</code></pre>
+						</p>
+					</section>
+					<section>
+						<h2>compact css option</h2>
+						<p>
+							In config.rb, if you do this: output_style = :compact
+							<pre><code>
+							#main {
+							&nbsp;&nbsp;color: #999;
+							&nbsp;&nbsp;.content {
+							&nbsp;&nbsp;&nbsp;&nbsp;color: #bfbfbf;
+							&nbsp;&nbsp;}
+							}
+							</code></pre>
+							<p>would produce CSS like this:</p> 
+							<pre><code>
+							/* line 8, ../sass/styles.scss */
+							#main { color: #999; }
+							/* line 10, ../sass/styles.scss */
+							#main .content { color: #bfbfbf; }
+							</code></pre>
+						</p>
+					</section>
+					<section>
+						<h2>compressed css option</h2>
+						<p>
+							In config.rb, if you do this: output_style = :compressed
+							<pre><code>
+							#main {
+							&nbsp;&nbsp;color: #999;
+							&nbsp;&nbsp;.content {
+							&nbsp;&nbsp;&nbsp;&nbsp;color: #bfbfbf;
+							&nbsp;&nbsp;}
+							}
+							</code></pre>
+							<p>would produce CSS like this:</p> 
+							<pre><code>
+							#main{color:#999}#main .content{color:#bfbfbf}
+							</code></pre>
+						</p>
 					</section>
 				</section>
+					
+				</section>
 
 				<section>
-					<h2>Slides</h2>
+					<h2>Sass partials</h2>
 					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
+						Create a folder named /partials. Within that file, create a file called _normalize.scss. The underscore tells Sass to not compile the file into its equivalent .css file (which it does for normal .scss files). Create /partials/_variables.scss. This must be referenced before any file that uses the variables.
+					</p>
+					
+				</section>
+
+				<section>
+					<h2>Sass 'watch' command</h2>
+					<p>
+						From the command line, type 'compass watch' in the project folder, Sass will monitor for .scss file changes and recompile into .css files.
+					</p>
+					<p>
+						You can alternatively use a GUI tool like Scout.
+					</p>
+					<p>
+						You can also manually compile .scss files into .css with 'compass compile' from command line.
+					</p>
+					
+				</section>
+
+				<section>
+					<h2>Sass in Eclipse</h2>
+					<p>
+						Creating a Project Builder in Eclipse to monitor and recompile .scss files into .css files on save of file (see example).
 					</p>
 				</section>
 
 				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
+					<h2>Sass language features / examples</h2>
+					
 				</section>
 
 				<section>
-					<h2>Works in Mobile Safari</h2>
+					<h2>Nesting</h2>
 					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
+						<pre><code>
+							nav {
+							&nbsp;&nbsp;ul {
+							&nbsp;&nbsp;&nbsp;&nbsp;margin: 0;
+							&nbsp;&nbsp;&nbsp;&nbsp;padding: 0;
+							&nbsp;&nbsp;&nbsp;&nbsp;list-style: none;
+							&nbsp;&nbsp;}
+
+							&nbsp;&nbsp;li { display: inline-block; }
+
+							&nbsp;&nbsp;a {
+							&nbsp;&nbsp;&nbsp;&nbsp;display: block;
+							&nbsp;&nbsp;&nbsp;&nbsp;padding: 6px 12px;
+							&nbsp;&nbsp;&nbsp;&nbsp;text-decoration: none;
+							&nbsp;&nbsp;}
+							}
+						</code></pre>
 					</p>
-				</section>
-
-				<section>
-					<h2>Marvelous Unordered List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
 				</section>
 
 				<section data-markdown>
@@ -374,15 +660,15 @@ function linkify( selector ) {
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
+				parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				parallaxBackgroundSize: '2100px 900px',
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); hljs.configure({tabReplace: '    '}); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
