@@ -185,6 +185,139 @@
 					</aside>
 				</section>
 
+				<section>
+					<section>
+						<h2>Why use Compass?</h2>
+						<p>
+							Some examples:
+						</p>
+
+						<a href="#" class="image navigate-down">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+
+					<section>
+						<p>
+							With Sass, you have to roll your own mixins:
+						</p>
+						<p>
+							<pre style="white-space: pre-line;"><code class="css">
+								@mixin border-radius($radius) {
+								&nbsp;&nbsp;-webkit-border-radius: $radius;
+								&nbsp;&nbsp;&nbsp;&nbsp;-moz-border-radius: $radius;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-ms-border-radius: $radius;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border-radius: $radius;
+								}
+
+								.box { @include border-radius(10px); }
+							</code>
+							</pre>
+						</p>
+
+						<p>
+							Compass comes bundled with a CSS3 module that includes all these mixins, so you just:
+						</p>
+						<p>
+							<pre style="white-space: pre-line;"><code class="css">
+								.box { @include border-radius(10px); }
+							</code>
+							</pre>
+						</p>
+						
+					</section>
+
+					<section>
+						<p>
+							Compass also comes with a typography module, so you can do things like this;
+						</p>
+						<p>
+							<pre style="white-space: pre-line;"><code class="css">
+								a {
+								&nbsp;&nbsp;// link colors (normal, hover, active, visited, focus)
+								&nbsp;&nbsp;@include link-colors(red, blue, grey, red, blue);
+								}
+							</code>
+							</pre>
+						</p>
+						
+					</section>
+
+					<section>
+						<p>
+							Nesting rules
+						</p>
+						<p>
+							<pre style="white-space: pre-line;"><code class="css">
+								nav {
+								&nbsp;&nbsp;a {
+								&nbsp;&nbsp;&nbsp;&nbsp;color: $red;
+								&nbsp;&nbsp;&nbsp;&nbsp;&:hover {
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: $green;
+								&nbsp;&nbsp;&nbsp;&nbsp;}
+								&nbsp;&nbsp;&nbsp;&nbsp;&:visited {
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: $blue;
+								&nbsp;&nbsp;&nbsp;&nbsp;}
+								&nbsp;&nbsp;}
+								}
+							</code>
+							</pre>
+						</p>
+						<p>
+							<pre style="white-space: pre-line;"><code>
+								nav a {
+								&nbsp;&nbsp;color: #ff0b13;
+								}
+								nav a:hover {
+								&nbsp;&nbsp;color: #11c909;
+								}
+								nav a:visited {
+								&nbsp;&nbsp;color: #091fff;
+								}
+							</code>
+							</pre>
+						</p>
+					</section>
+
+					<section>
+						<p>
+							Media queries
+						</p>
+						<p>
+							<pre style="white-space: pre-line;"><code class="css">
+								@media only screen and (min-width: 280px) and (max-width: 479px) {
+								&nbsp;&nbsp;.h1 {
+								&nbsp;&nbsp;&nbsp;&nbsp;font-size: 1.1em;
+								&nbsp;&nbsp;}
+								}
+								@media only screen and (min-width: 600px) and (max-width: 767px) {
+								&nbsp;&nbsp;.h1 {
+								&nbsp;&nbsp;&nbsp;&nbsp;font-size: 0.9em;
+								&nbsp;&nbsp;}
+								}
+							</code>
+							</pre>
+						</p>
+						<p>
+							<pre style="white-space: pre-line;"><code>
+								h1 {
+								&nbsp;&nbsp;@include MQ(XS) {
+								&nbsp;&nbsp;&nbsp;&nbsp;font-size: 1.1em;
+								&nbsp;&nbsp;}
+								&nbsp;&nbsp;@include MQ(M) {
+								&nbsp;&nbsp;&nbsp;&nbsp;font-size: 0.9em;
+								&nbsp;&nbsp;}
+								}
+							</code>
+							</pre>
+						</p>
+					</section>
+
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
+				</section>
+
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
