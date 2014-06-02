@@ -243,75 +243,7 @@
 						
 					</section>
 
-					<section>
-						<p>
-							Nesting rules
-						</p>
-						<p>
-							<pre style="white-space: pre-line;"><code class="css">
-								nav {
-								&nbsp;&nbsp;a {
-								&nbsp;&nbsp;&nbsp;&nbsp;color: $red;
-								&nbsp;&nbsp;&nbsp;&nbsp;&:hover {
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: $green;
-								&nbsp;&nbsp;&nbsp;&nbsp;}
-								&nbsp;&nbsp;&nbsp;&nbsp;&:visited {
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: $blue;
-								&nbsp;&nbsp;&nbsp;&nbsp;}
-								&nbsp;&nbsp;}
-								}
-							</code>
-							</pre>
-						</p>
-						<p>
-							<pre style="white-space: pre-line;"><code>
-								nav a {
-								&nbsp;&nbsp;color: #ff0b13;
-								}
-								nav a:hover {
-								&nbsp;&nbsp;color: #11c909;
-								}
-								nav a:visited {
-								&nbsp;&nbsp;color: #091fff;
-								}
-							</code>
-							</pre>
-						</p>
-					</section>
-
-					<section>
-						<p>
-							Media queries
-						</p>
-						<p>
-							<pre style="white-space: pre-line;"><code class="css">
-								@media only screen and (min-width: 280px) and (max-width: 479px) {
-								&nbsp;&nbsp;.h1 {
-								&nbsp;&nbsp;&nbsp;&nbsp;font-size: 1.1em;
-								&nbsp;&nbsp;}
-								}
-								@media only screen and (min-width: 600px) and (max-width: 767px) {
-								&nbsp;&nbsp;.h1 {
-								&nbsp;&nbsp;&nbsp;&nbsp;font-size: 0.9em;
-								&nbsp;&nbsp;}
-								}
-							</code>
-							</pre>
-						</p>
-						<p>
-							<pre style="white-space: pre-line;"><code>
-								h1 {
-								&nbsp;&nbsp;@include MQ(XS) {
-								&nbsp;&nbsp;&nbsp;&nbsp;font-size: 1.1em;
-								&nbsp;&nbsp;}
-								&nbsp;&nbsp;@include MQ(M) {
-								&nbsp;&nbsp;&nbsp;&nbsp;font-size: 0.9em;
-								&nbsp;&nbsp;}
-								}
-							</code>
-							</pre>
-						</p>
-					</section>
+					
 
 					<aside class="notes">
 						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
